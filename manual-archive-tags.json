@@ -1,0 +1,390 @@
+{
+  "topic_options": [
+    "Automotive",
+    "Business",
+    "Communication",
+    "Culture",
+    "Faith",
+    "Family",
+    "General Interest",
+    "History",
+    "Ideas",
+    "Middle East",
+    "Military",
+    "Politics",
+    "Science",
+    "Security",
+    "Sports",
+    "Technology",
+    "Transportation",
+    "War"
+  ],
+  "articles": {
+    "100-years-of-fill-er-up": {
+      "title": "100 Years of Fill ‘Er Up",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": ["Automotive"]
+    },
+    "americans-in-the-age-of-parody": {
+      "title": "Americans in the Age of Parody",
+      "publication": "Unreleased",
+      "year": "",
+      "topics": ["Culture", "Politics"]
+    },
+    "an-american-thanksgiving": {
+      "title": "An American Thanksgiving",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": ["Faith", "Family"]
+    },
+    "an-ugly-little-reality": {
+      "title": "An Ugly Little Reality",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": ["War", "Middle East", "Politics"]
+    },
+    "armor-all": {
+      "title": "Armor All",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": ["War", "Middle East", "Politics"]
+    },
+    "automobility-the-secrets-of-their-success": {
+      "title": "Automobility- The Secrets of Their Success",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": ["Automotive", "Business"]
+    },
+    "confronting-he-who-confronts": {
+      "title": "Confronting 'He Who Confronts'",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": ["War", "Middle East", "Politics"]
+    },
+    "courage-in-profiles": {
+      "title": "Courage in Profiles",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": ["Culture", "Politics"]
+    },
+    "death-duty-d-day": {
+      "title": "Death, Duty, D-Day",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": ["War", "Politics"]
+    },
+    "dieselmania": {
+      "title": "Dieselmania",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": ["Automotive"]
+    },
+    "dreaming-of-a-remote-christmas": {
+      "title": "Dreaming of a Remote Christmas",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": ["Culture", "Family", "Faith"]
+    },
+    "duty-and-sacrifice": {
+      "title": "Duty and Sacrifice",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": ["War", "Politics"]
+    },
+    "electrobooks-at-last": {
+      "title": "Electrobooks at Last",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "evoking-a-splendid-legend": {
+      "title": "Evoking a Splendid Legend",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "fallen-heroes-never-forgotten": {
+      "title": "Fallen Heroes, Never Forgotten",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "faster-faster": {
+      "title": "Faster, Faster!",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "funny-thing-about-christmas": {
+      "title": "Funny Thing About Christmas",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "gangland-slaying": {
+      "title": "Gangland Slaying",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "glovology": {
+      "title": "Glovology",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "go-and-find-a-soldiers-grave": {
+      "title": "Go and Find a Soldier's Grave",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "goodbye-jelly-bean": {
+      "title": "Goodbye, Jelly Bean",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "happy-gathering": {
+      "title": "Happy Gathering",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "happy-gremlin-day": {
+      "title": "Happy Gremlin Day!",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "highway-to-heaven": {
+      "title": "Highway to Heaven",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "how-honest-are-we": {
+      "title": "How Honest Are We",
+      "publication": "Reader's Digest",
+      "year": "",
+      "topics": []
+    },
+    "is-the-electric-emperor-naked": {
+      "title": "Is the Electric Emperor Naked",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "long-shot": {
+      "title": "Long Shot",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "man-without-honor": {
+      "title": "Man Without Honor",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "marines-notice-things": {
+      "title": "Marines Notice Things",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "maybe-now-well-get-it": {
+      "title": "Maybe Now We'll Get It",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "merry-christmas": {
+      "title": "Merry Christmas!",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "more-than-hezbollah-can-chew": {
+      "title": "More Than Hezbollah Can Chew",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "razor-wars-and-the-cutting-edge-of-technology": {
+      "title": "Razor Wars and the Cutting Edge of Technology",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "remembering-with-pain-anger-and-vigilance": {
+      "title": "Remembering- With Pain, Anger, and Vigilance",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "roadside-bombs-the-hydra-effect": {
+      "title": "Roadside Bombs- The Hydra Effect",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "routine-evil": {
+      "title": "Routine Evil",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "small-car-big-shadow": {
+      "title": "Small Car, Big Shadow",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "technology-on-top-appreciating-the-luxury-learning-curve": {
+      "title": "Technology on Top- Appreciating the Luxury Learning Curve",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "telling-the-difference-between-hamas-and-shinola": {
+      "title": "Telling the Difference Between Hamas and Shinola",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "tennis-with-milton": {
+      "title": "Tennis With Milton",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "the-2500-car": {
+      "title": "The $2,500 Car",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "the-automobiles-forgotten-secret": {
+      "title": "The Automobile’s Forgotten Secret",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "the-elegant-jeep": {
+      "title": "The Elegant Jeep",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "the-gas-pedal-sticks-the-market-works-the-hyperventilation-increases": {
+      "title": "The Gas Pedal Sticks, the Market Works, the Hyperventilation Increases!",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "the-guardians": {
+      "title": "The Guardians",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "the-passing-of-pontiac": {
+      "title": "The Passing of Pontiac",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "the-pseudo-scientists-of-earthism": {
+      "title": "The Pseudo-Scientists of Earthism",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "the-u-9-and-the-realm-of-the-unexpected": {
+      "title": "The U-9 and the Realm of the Unexpected",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "this-astounding-enterprise-2": {
+      "title": "This Astounding Enterprise (2)",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "this-astounding-enterprise": {
+      "title": "This Astounding Enterprise",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "truckin": {
+      "title": "Truckin’",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "what-a-father-taught-me-2": {
+      "title": "What a Father Taught Me (2)",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "what-a-father-taught-me": {
+      "title": "What a Father Taught Me",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "what-did-mr-murtha-mean": {
+      "title": "What Did Mr. Murtha Mean",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "what-i-remember": {
+      "title": "What I Remember",
+      "publication": "National Review",
+      "year": "",
+      "topics": []
+    },
+    "who-killed-the-electric-car": {
+      "title": "Who Killed the Electric Car",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "why-gasoline-is-still-king": {
+      "title": "Why Gasoline Is Still King",
+      "publication": "American Enterprise Institute",
+      "year": "",
+      "topics": []
+    },
+    "why-i-am-a-member-of-the-christian-church": {
+      "title": "Why I am a Member of the Christian church",
+      "publication": "Levittown Christian Church",
+      "year": "",
+      "topics": []
+    },
+    "wrist-action": {
+      "title": "Wrist Action",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "you-have-a-telegram": {
+      "title": "'You Have a Telegram'",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    },
+    "yugos-happen-the-lure-of-crap-cars": {
+      "title": "Yugos Happen - The Lure of Crap Cars",
+      "publication": "TCS Daily",
+      "year": "",
+      "topics": []
+    }
+  }
+}

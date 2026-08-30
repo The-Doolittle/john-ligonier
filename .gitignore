@@ -1,0 +1,32 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+.venv/
+.env
+
+# Local editor and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local preview / runtime artifacts
+*.log
+*.tmp
+
+# Generated article output and local archive build artifacts
+articles/
+!articles/.gitkeep
+
+generated/
+
+# Keep the source generator tracked, but ignore the local folder outputs it creates
+# (if you prefer to commit generated HTML/JSON, remove the generated/ line below)
+# generated/
+
+# Optional: ignore Python script if you only want the published static output
+# This project uses the script to generate content, so it is usually kept in git.
+# generate_archive_data.py
