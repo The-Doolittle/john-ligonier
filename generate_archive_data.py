@@ -328,25 +328,25 @@ def article_page_html(article: dict) -> str:
   <meta charset=\"UTF-8\" />
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
   <title>{title} | John Ligonier Archive</title>
-  <link rel=\"stylesheet\" href=\"../style.css\" />
+  <link rel=\"stylesheet\" href=\"../../style.css\" />
 </head>
 <body>
   <header>
     <h1>Ralph Kinney Bennett</h1>
     <div class=\"pseudonym\">March 3, 1941 – December 18, 2024</div>
     <nav>
-      <a href=\"../index.html\">Home</a>
-      <a href=\"../about.html\">About</a>
-      <a href=\"../obituary.html\">Obituary</a>
-      <a href=\"../archives.html\" class=\"active\">Archives</a>
-      <a href=\"../appearances.html\">Appearances</a>
+      <a href=\"../../\">Home</a>
+      <a href=\"../../about\">About</a>
+      <a href=\"../../obituary\">Obituary</a>
+      <a href=\"../../archives\" class=\"active\">Archives</a>
+      <a href=\"../../appearances\">Appearances</a>
     </nav>
   </header>
   <main class=\"article-page\">
     <div class=\"article-shell\">
       <div class=\"article-card\">
         <div class=\"article-card-header\">
-          <a href=\"../archives.html\" class=\"archive-back-link\">← Back to Archives</a>
+          <a href=\"../../archives\" class=\"archive-back-link\">← Back to Archives</a>
         </div>
         <article class=\"article-body\">
           <h2>{title}</h2>
@@ -422,12 +422,14 @@ def main():
             "excerpt": excerpt,
             "slug": html_path.stem,
             "source": html_path.name,
-            "link": f"articles/{html_path.name}",
+            "link": f"articles/{html_path.stem}",
             "body_html": cleaned_body,
         }
         articles.append(article_data)
 
-        html_path.write_text(article_page_html(article_data), encoding="utf-8")
+        article_dir = ARTICLES_DIR / html_path.stem
+        article_dir.mkdir(exist_ok=True)
+        (article_dir / "index.html").write_text(article_page_html(article_data), encoding="utf-8")
 
     articles.sort(key=lambda item: item["title"].lower())
 

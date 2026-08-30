@@ -89,7 +89,7 @@ main {
     opacity: 1;
 }
 
-main > p:has(a[href$="archives.html"]) {
+main > p:has(a[href$="archives"]) {
     background: rgba(74, 92, 80, 0.04);
     border: 1px solid var(--border-color);
     border-bottom: none;
@@ -98,7 +98,7 @@ main > p:has(a[href$="archives.html"]) {
     padding: 0.9rem 1.25rem;
 }
 
-main > p:has(a[href$="archives.html"]) a {
+main > p:has(a[href$="archives"]) a {
     color: var(--accent-color);
     text-decoration: none;
     font-size: 0.9rem;
@@ -106,7 +106,7 @@ main > p:has(a[href$="archives.html"]) a {
     text-transform: uppercase;
 }
 
-main > p:has(a[href$="archives.html"]) + article {
+main > p:has(a[href$="archives"]) + article {
     background: rgba(255, 255, 255, 0.7);
     border: 1px solid var(--border-color);
     border-radius: 0 0 18px 18px;
