@@ -18,8 +18,8 @@ Thumbs.db
 *.tmp
 
 # Generated article output and local archive build artifacts
-articles/
-!articles/.gitkeep
+# articles/
+#!articles/.gitkeep
 
 generated/
 
