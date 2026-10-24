@@ -1,0 +1,39 @@
+# Production: gunicorn from the image, no code mount, no published ports.
+# Nginx Proxy Manager reaches the site at http://john-ligonier:8000 over the shared proxy network.
+services:
+  db:
+    image: postgres:18-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      retries: 10
+
+  web:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_HOST: db
+    networks:
+      default:
+      proxy:
+        aliases:
+          - john-ligonier
+    depends_on:
+      db:
+        condition: service_healthy
+
+networks:
+  proxy:
+    external: true
+    name: ${NPM_NETWORK:?Set NPM_NETWORK in .env to the Docker network Nginx Proxy Manager uses}
+
+volumes:
+  pgdata:
