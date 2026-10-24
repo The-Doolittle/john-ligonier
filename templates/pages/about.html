@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h1>About Ralph Bennett</h1>
+
+  <p>Ralph Kinney Bennett (1941–2024) lived a life defined by a deep curiosity about the world and an enduring love for his home. Born at Latrobe Hospital and raised in Rector, Pennsylvania, Ralph's roots in the Ligonier Valley ran deep. His mother, Virginia, was the editor of the <em>Ligonier Echo</em> in the 1970s, establishing a family legacy of storytelling that Ralph would carry forward through the rest of his life.</p>
+
+  <p>Yet, no matter how far his assignments took him, he was always drawn back to Ligonier. Retiring in 2002, he returned home and immediately dedicated himself to the community's preservation. He joined the Ligonier Volunteer Hose Company #1 and served on the board of trustees for Fort Ligonier.</p>
+
+  <p>Combining his lifelong passion for military history with his exceptional talent as a writer, he authored <em>Ligonier 250: The Fort – The Town – The Valley</em> for the fort’s 250th anniversary in 2008. Often writing under the pseudonym <strong>John Ligonier</strong>, Ralph left behind an invaluable archive of historical research, ensuring the story of the valley he loved will never be forgotten.</p>
+
+  <!-- Bios -->
+  <section class="bios" aria-labelledby="bios-title">
+    <h2 id="bios-title">Bios and profiles</h2>
+
+    <details class="bio">
+      <summary class="bio__summary">
+        <img class="bio__photo" src="{% static 'img/profiles/ralph-cspan.webp' %}" width="200" height="200" alt="Portrait of Ralph Kinney Bennett used by C-SPAN" loading="lazy">
+        <span class="bio__heading">
+          <span class="bio__title">On the C-SPAN Networks</span>
+          <span class="bio__preview">Senior Staff Editor for Washington, DC in the <em>Reader's Digest</em>, with eight videos in the C-SPAN Video Library.</span>
+        </span>
+      </summary>
+      <div class="bio__body">
+        <p>Ralph Bennett is a Senior Staff Editor for Washington, DC in the <em>Reader's Digest</em> with <a href="https://www.c-span.org/search/?searchtype=Videos&amp;personid[]=3798">eight videos</a> in the C-SPAN Video Library; the first appearance was a 1984 <a href="https://www.c-span.org/video/?104136-1">Call-In</a>. The year with the most videos was <a href="https://www.c-span.org/search/?searchtype=Videos&amp;personid[]=3798&amp;sdate=01%2F01%2F1985&amp;edate=12%2F31%2F1985&amp;sort=Most%20Popular">1985</a> with two videos. Most appearances were with <a href="https://www.c-span.org/person/?5893/JulianaGeranPilon">Juliana Geran Pilon</a>.</p>
+      </div>
+    </details>
+
+    <details class="bio">
+      <summary class="bio__summary">
+        <img class="bio__photo" src="{% static 'img/profiles/ralph-tcs.jpg' %}" width="108" height="139" alt="Portrait of Ralph Kinney Bennett used by TCS Daily" loading="lazy">
+        <span class="bio__heading">
+          <span class="bio__title">Contributing Editor, TCS</span>
+          <span class="bio__preview">A TCS Contributing Editor and avid scholar of military history, with a passion for automobiles, classic poetry and long bicycle rides.</span>
+        </span>
+      </summary>
+      <div class="bio__body">
+        <p>Ralph Kinney Bennett is a TCS Contributing Editor. An aging crank, he lives in Ligonier, Pa., and Delray Beach, Fla. He is an avid scholar of military history. He has a passion for automobiles, the Simpsons, English and American classic poetry and long bicycle rides. He is fascinated by technology, but particularly by what he calls “technology that counts — like the paper clip or a garage door opener.”</p>
+        <p>Mr. Bennett is retired from the Washington bureau of <em>The Reader's Digest</em> as an Assistant Managing Editor. For over 30 years he wrote on a wide variety of subjects for the magazine. Prior to joining the Digest, he was a writer for <em>The National Observer</em>, <em>The Philadelphia Inquirer</em>, and <em>The New Haven Register</em>.</p>
+        <p>He and his wife, Virginia, a retired CPA, have two children and five grandchildren.</p>
+      </div>
+    </details>
+
+    <details class="bio">
+      <summary class="bio__summary">
+        <img class="bio__photo" src="{% static 'img/profiles/ralph-philadelphia.jpg' %}" width="150" height="150" alt="Portrait of Ralph Kinney Bennett used by The Philadelphia Society" loading="lazy">
+        <span class="bio__heading">
+          <span class="bio__title">The Philadelphia Society</span>
+          <span class="bio__preview">Writer, volunteer firefighter, and author of the “Automobility” column for <em>The American</em>.</span>
+        </span>
+      </summary>
+      <div class="bio__body">
+        <p>Ralph Kinney Bennett retired from the Washington bureau of <em>The Reader’s Digest</em> as an assistant managing editor. Currently a Contributing Editor for TCSDaily.com and the American Enterprise Institute’s American.com, he writes the “Automobility” column for <em>The American</em>. He is a volunteer firefighter. He lives in Ligonier, Pa., and Delray Beach, Fla.</p>
+      </div>
+    </details>
+  </section>
+{% endblock %}

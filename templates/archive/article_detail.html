@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block robots %}{% if not article.is_published %}<meta name="robots" content="noindex">{% endif %}{% endblock %}
+
+{% block content %}
+  {% if not article.is_published %}
+    <p class="notice" role="status">Draft preview. Only signed-in family members can see this page.</p>
+  {% endif %}
+
+  <article class="article">
+    <header class="article__header">
+      <p class="article__back"><a href="{% url 'archive:article_list' %}">Back to the archive</a></p>
+      <h1>{{ article.title }}</h1>
+      <p class="article__meta">
+        By Ralph Kinney Bennett{% if article.publication %} · <a href="{% url 'archive:article_list' %}?publication={{ article.publication.slug }}">{{ article.publication.name }}</a>{% endif %}
+        · {% if article.published_on %}<time datetime="{{ article.published_on|date:'Y-m-d' }}">{{ article.published_on|date:"F j, Y" }}</time>{% else %}Date unknown{% endif %}
+      </p>
+      {% if topics %}
+        <ul class="tags" aria-label="Topics">
+          {% for topic in topics %}<li><a class="tag" href="{% url 'archive:article_list' %}?topic={{ topic.slug }}">{{ topic.name }}</a></li>{% endfor %}
+        </ul>
+      {% endif %}
+    </header>
+
+    <div class="prose">
+      {{ article.body_html }}
+    </div>
+
+    {% if article.source_url %}
+      <p class="article__source">Originally published at <a href="{{ article.source_url }}">{{ article.publication.name|default:"the original source" }}</a>.</p>
+    {% endif %}
+  </article>
+
+  {% if related %}
+    <!-- Related -->
+    <section class="related" aria-labelledby="related-title">
+      <h2 id="related-title">More on these topics</h2>
+      <ul class="related__list">
+        {% for item in related %}
+          <li class="related__item">
+            <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+            <span class="related__meta">{% if item.publication %}{{ item.publication.name }}{% endif %}{% if item.published_on %}, {{ item.published_on|date:"Y" }}{% endif %}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,7 @@
+_devnotes/
+.env
+__pycache__/
+.venv/
+.git/
+legacy/
+staticfiles/

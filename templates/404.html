@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block robots %}<meta name="robots" content="noindex">{% endblock %}
+
+{% block content %}
+  <h1>Page not found</h1>
+  <p>That page isn't here. It may have moved when the archive was rebuilt.</p>
+  <p>Try <a href="{% url 'archive:article_list' %}">searching the archive</a> or go back to the <a href="{% url 'pages:home' %}">home page</a>.</p>
+{% endblock %}

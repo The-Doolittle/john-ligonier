@@ -1,0 +1,63 @@
+{% load static site_tags %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page_title %}{{ page_title }} | Ralph Kinney Bennett{% else %}Ralph Kinney Bennett | Memorial Archive{% endif %}</title>
+  <meta name="description" content="{{ page_description|default:'Writings, appearances and memorial archive of Ralph Kinney Bennett (1941–2024).' }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  {% block robots %}{% endblock %}
+
+  <meta property="og:type" content="{{ og_type|default:'website' }}">
+  <meta property="og:site_name" content="Ralph Kinney Bennett">
+  <meta property="og:title" content="{{ page_title|default:'Ralph Kinney Bennett' }}">
+  <meta property="og:description" content="{{ page_description|default:'Writings, appearances and memorial archive of Ralph Kinney Bennett (1941–2024).' }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:image" content="{{ site_url }}{% static 'img/home/bandstand.jpg' %}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="{% static 'img/favicon.svg' %}" type="image/svg+xml">
+  <meta name="theme-color" content="#4a5c50" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1f1d" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  {% if structured_data %}{{ structured_data|json_ld }}{% endif %}
+  {% block scripts %}{% endblock %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    {% if nav_section == "home" %}
+      <h1 class="brand">
+        <span class="brand__name">Ralph Kinney Bennett</span>
+        <span class="brand__dates">March 3, 1941 – December 18, 2024</span>
+      </h1>
+    {% else %}
+      <p class="brand">
+        <a class="brand__name" href="{% url 'pages:home' %}">Ralph Kinney Bennett</a>
+        <span class="brand__dates">March 3, 1941 – December 18, 2024</span>
+      </p>
+    {% endif %}
+    <nav class="site-nav" aria-label="Main">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="{% url 'pages:home' %}"{% if nav_section == "home" %} aria-current="page"{% endif %}>Home</a></li>
+        <li><a class="site-nav__link" href="{% url 'pages:about' %}"{% if nav_section == "about" %} aria-current="page"{% endif %}>About</a></li>
+        <li><a class="site-nav__link" href="{% url 'pages:obituary' %}"{% if nav_section == "obituary" %} aria-current="page"{% endif %}>Obituary</a></li>
+        <li><a class="site-nav__link" href="{% url 'archive:article_list' %}"{% if nav_section == "archives" %} aria-current="{{ nav_current }}"{% endif %}>Archives</a></li>
+        <li><a class="site-nav__link" href="{% url 'archive:appearance_list' %}"{% if nav_section == "appearances" %} aria-current="page"{% endif %}>Appearances</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="page {% block page_class %}{% endblock %}" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; {{ current_year }} The Memorial Archive of Ralph Kinney Bennett. Maintained with love by his family.</p>
+    <p><a href="{% url 'pages:share_memory' %}">Share a memory with the family</a></p>
+  </footer>
+</body>
+</html>

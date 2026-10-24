@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block page_class %}page--wide{% endblock %}
+
+{% block content %}
+  <h1>Public appearances</h1>
+  <p class="intro">A record of Ralph Bennett's televised interviews, discussions and public commentary. <a href="https://www.c-span.org/search/?searchtype=Videos&amp;sort=Newest&amp;personid[]=3798">See his full C-SPAN archive</a>.</p>
+
+  <ul class="appearances">
+    {% for appearance in appearances %}
+      <li class="appearance">
+        {% if appearance.player_url %}
+          <div class="video">
+            <iframe src="{{ appearance.player_url }}" title="{{ appearance.title }}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        {% endif %}
+        <div class="appearance__body">
+          <p class="appearance__meta">{{ appearance.outlet }} · <time datetime="{{ appearance.appeared_on|date:'Y-m-d' }}">{{ appearance.appeared_on|date:"F j, Y" }}</time></p>
+          <h2 class="appearance__title">{{ appearance.title }}</h2>
+          {% if appearance.description %}<p>{{ appearance.description }}</p>{% endif %}
+          <p class="appearance__link"><a href="{{ appearance.watch_url }}">{{ appearance.watch_label }}<span class="visually-hidden">: {{ appearance.title }}</span></a></p>
+        </div>
+      </li>
+    {% empty %}
+      <li>No appearances have been added yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

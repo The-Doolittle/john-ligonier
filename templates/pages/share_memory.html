@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Share a memory</h1>
+  <p>Have a story about Ralph, or something he wrote that stayed with you? Send it to the family here. Memories go privately to the family and are not posted on this site.</p>
+
+  <form class="form" method="post" action="{% url 'pages:share_memory' %}">
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+      <div class="form__errors" role="alert">{{ form.non_field_errors }}</div>
+    {% endif %}
+
+    {% for field in form %}
+      {% if field.name == "website" %}
+        <div class="form__trap" aria-hidden="true">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          <input type="text" name="{{ field.html_name }}" id="{{ field.id_for_label }}" tabindex="-1" autocomplete="off">
+        </div>
+      {% else %}
+        <div class="form__field">
+          <label class="form__label" for="{{ field.id_for_label }}">
+            {{ field.label }}{% if field.field.required %} <span class="form__required">(required)</span>{% endif %}
+          </label>
+          {% if field.help_text %}<p class="form__help" id="{{ field.auto_id }}_helptext">{{ field.help_text }}</p>{% endif %}
+          {% if field.errors %}<div class="form__error" id="{{ field.auto_id }}_error">{{ field.errors }}</div>{% endif %}
+          {{ field }}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <button class="button" type="submit">Send to the family</button>
+  </form>
+{% endblock %}

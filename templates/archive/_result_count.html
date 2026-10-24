@@ -1,0 +1,3 @@
+<p id="result-count" class="result-count" aria-live="polite"{% if swap_oob %} hx-swap-oob="innerHTML"{% endif %}>
+  {{ page.paginator.count }} article{{ page.paginator.count|pluralize }}{% if q %} matching “{{ q }}”{% endif %}{% if page.paginator.num_pages > 1 %}, page {{ page.number }} of {{ page.paginator.num_pages }}{% endif %}
+</p>

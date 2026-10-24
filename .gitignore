@@ -1,3 +1,6 @@
+# Dev notes (local only)
+_devnotes/
+
 # Python cache and virtual environments
 __pycache__/
 *.py[cod]
@@ -12,6 +15,9 @@ venv/
 Thumbs.db
 .vscode/
 .idea/
+
+# Django collectstatic output
+staticfiles/
 
 # Local preview / runtime artifacts
 *.log

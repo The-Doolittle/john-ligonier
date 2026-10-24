@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}<script src="{% static 'js/htmx.min.js' %}" defer></script>{% endblock %}
+
+{% block page_class %}page--wide{% endblock %}
+
+{% block content %}
+  <h1>Written archives</h1>
+  <p class="intro">Articles, essays and columns by Ralph Bennett. Search by any word in an article, or narrow the list by publication, year or topic.</p>
+
+  <form id="archive-search" class="search" action="{% url 'archive:article_list' %}" method="get" role="search"
+        hx-get="{% url 'archive:article_list' %}" hx-target="#results" hx-swap="outerHTML" hx-push-url="true"
+        hx-trigger="input changed delay:300ms from:#q, submit">
+    <label class="search__label" for="q">Search the archive</label>
+    <div class="search__row">
+      <input class="search__input" id="q" name="q" type="search" value="{{ q }}" autocomplete="off">
+      <button class="button" type="submit">Search</button>
+    </div>
+  </form>
+
+  {% include "archive/_result_count.html" %}
+  {% include "archive/_results.html" %}
+{% endblock %}

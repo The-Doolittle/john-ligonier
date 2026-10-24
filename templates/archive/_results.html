@@ -1,0 +1,85 @@
+{% load archive_tags %}
+<div id="results" class="archive" hx-target="#results" hx-swap="outerHTML">
+  {# Fields below belong to the search form above via the form attribute, so the current filters and sort travel with every search. #}
+  {% if active_publication %}<input type="hidden" name="publication" value="{{ active_publication.slug }}" form="archive-search">{% endif %}
+  {% if active_topic %}<input type="hidden" name="topic" value="{{ active_topic.slug }}" form="archive-search">{% endif %}
+  {% if active_year %}<input type="hidden" name="year" value="{{ active_year }}" form="archive-search">{% endif %}
+
+  <!-- Filters -->
+  <aside class="filters" aria-label="Filter articles" hx-boost="true">
+    {% if has_filters %}
+      <div class="filters__active">
+        <h2 class="filters__title">Showing</h2>
+        <ul class="chips">
+          {% if active_publication %}<li><a class="chip chip--active" href="{% querystring publication=None page=None %}">{{ active_publication.name }} <span class="visually-hidden">(remove filter)</span><span aria-hidden="true">×</span></a></li>{% endif %}
+          {% if active_year %}<li><a class="chip chip--active" href="{% querystring year=None page=None %}">{% if active_year == "undated" %}Undated{% else %}{{ active_year }}{% endif %} <span class="visually-hidden">(remove filter)</span><span aria-hidden="true">×</span></a></li>{% endif %}
+          {% if active_topic %}<li><a class="chip chip--active" href="{% querystring topic=None page=None %}">{{ active_topic.name }} <span class="visually-hidden">(remove filter)</span><span aria-hidden="true">×</span></a></li>{% endif %}
+        </ul>
+        <p><a href="{% url 'archive:article_list' %}{% if q %}?q={{ q|urlencode }}{% endif %}">Clear all filters</a></p>
+      </div>
+    {% endif %}
+
+    <h2 class="filters__title">Publication</h2>
+    <ul class="chips">
+      {% for item in publication_facets %}
+        <li><a class="chip{% if item == active_publication %} chip--active{% endif %}" href="{% if item == active_publication %}{% querystring publication=None page=None %}{% else %}{% querystring publication=item.slug page=None %}{% endif %}"{% if item == active_publication %} aria-current="true"{% endif %}>{{ item.name }} <span class="chip__count">{{ item.count }}</span></a></li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="filters__title">Year</h2>
+    <ul class="chips">
+      {% for item in year_facets %}
+        <li><a class="chip{% if item.value == active_year %} chip--active{% endif %}" href="{% if item.value == active_year %}{% querystring year=None page=None %}{% else %}{% querystring year=item.value page=None %}{% endif %}"{% if item.value == active_year %} aria-current="true"{% endif %}>{% if item.value == "undated" %}Undated{% else %}{{ item.value }}{% endif %} <span class="chip__count">{{ item.count }}</span></a></li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="filters__title">Topic</h2>
+    <ul class="chips">
+      {% for item in topic_facets %}
+        <li><a class="chip{% if item == active_topic %} chip--active{% endif %}" href="{% if item == active_topic %}{% querystring topic=None page=None %}{% else %}{% querystring topic=item.slug page=None %}{% endif %}"{% if item == active_topic %} aria-current="true"{% endif %}>{{ item.name }} <span class="chip__count">{{ item.count }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+  <!-- Results -->
+  <section class="results" aria-labelledby="results-title">
+    <div class="results__toolbar">
+      <h2 id="results-title" class="visually-hidden">Articles</h2>
+      <label class="search__label" for="sort">Sort</label>
+      <select class="search__select" id="sort" name="sort" form="archive-search"
+              hx-get="{% url 'archive:article_list' %}" hx-include="#archive-search" hx-push-url="true">
+        {% for key, label in sorts.items %}
+          <option value="{{ key }}"{% if key == sort %} selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    {% for article in page %}
+      <article class="card">
+        <h3 class="card__title"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+        <p class="card__meta">
+          {% if article.publication %}{{ article.publication.name }} · {% endif %}
+          {% if article.published_on %}<time datetime="{{ article.published_on|date:'Y-m-d' }}">{{ article.published_on|date:"F j, Y" }}</time>{% else %}Date unknown{% endif %}
+        </p>
+        <p class="card__excerpt">{% if article.headline %}{{ article.headline|highlight }}{% else %}{{ article.excerpt }}{% endif %}</p>
+        {% with topics=article.topics.all %}
+          {% if topics %}
+            <ul class="tags" aria-label="Topics" hx-boost="true">
+              {% for topic in topics %}<li><a class="tag" href="?topic={{ topic.slug }}">{{ topic.name }}</a></li>{% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </article>
+    {% empty %}
+      <p class="results__empty">No articles match. Try fewer words, or <a href="{% url 'archive:article_list' %}">clear the search and filters</a>.</p>
+    {% endfor %}
+
+    {% if page.has_other_pages %}
+      <nav class="pagination" aria-label="Pages" hx-boost="true" hx-swap="outerHTML show:#archive-search:top">
+        {% if page.has_previous %}<a class="pagination__link" href="{% querystring page=page.previous_page_number %}">Previous</a>{% endif %}
+        <span class="pagination__status">Page {{ page.number }} of {{ page.paginator.num_pages }}</span>
+        {% if page.has_next %}<a class="pagination__link" href="{% querystring page=page.next_page_number %}">Next</a>{% endif %}
+      </nav>
+    {% endif %}
+  </section>
+</div>
