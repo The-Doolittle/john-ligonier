@@ -1,5 +1,6 @@
-# Production: gunicorn from the image, no code mount, no published ports.
-# Nginx Proxy Manager reaches the site at http://john-ligonier:8000 over the shared proxy network.
+# Production: gunicorn from the image, no code mount.
+# Nginx Proxy Manager runs on a separate DMZ host and forwards to this machine's IP on WEB_PORT;
+# restrict that port to NPM in the firewall.
 services:
   db:
     image: postgres:18-alpine
@@ -21,19 +22,11 @@ services:
     env_file: .env
     environment:
       POSTGRES_HOST: db
-    networks:
-      default:
-      proxy:
-        aliases:
-          - john-ligonier
+    ports:
+      - "${WEB_PORT:-8000}:8000"
     depends_on:
       db:
         condition: service_healthy
-
-networks:
-  proxy:
-    external: true
-    name: ${NPM_NETWORK:?Set NPM_NETWORK in .env to the Docker network Nginx Proxy Manager uses}
 
 volumes:
   pgdata:

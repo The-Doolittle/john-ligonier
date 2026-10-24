@@ -24,7 +24,7 @@ services:
     volumes:
       - .:/app
     # Dev VM only: it hosts several services, so this site is published on 8040.
-    # In production NPM shares the Docker host and reaches the container by name on 8000.
+    # Production uses compose.prod.yaml.
     ports:
       - "8040:8000"
     depends_on:
